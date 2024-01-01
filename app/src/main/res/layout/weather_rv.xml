@@ -36,14 +36,17 @@
             android:textColor="@color/white"/>
 
         <ImageView
+            android:id="@+id/idIVCondition"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/idIVCondition"
             android:layout_below="@id/idTVTemperatureCard"
             android:layout_centerHorizontal="true"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:padding="4dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
