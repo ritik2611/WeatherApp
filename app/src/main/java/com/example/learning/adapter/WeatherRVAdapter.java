@@ -1,4 +1,4 @@
-package com.example.learning;
+package com.example.learning.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learning.R;
+import com.example.learning.modal.WeatherRVModal;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
