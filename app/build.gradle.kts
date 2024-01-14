@@ -31,6 +31,7 @@ android {
     }
 }
 
+
 dependencies {
     
     //noinspection GradleCompatible
@@ -44,6 +45,5 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-
-
+//    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

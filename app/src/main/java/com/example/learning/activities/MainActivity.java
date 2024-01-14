@@ -1,13 +1,9 @@
 package com.example.learning.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -17,10 +13,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,33 +33,30 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.learning.local.LocationHandler;
 import com.example.learning.R;
 import com.example.learning.adapter.WeatherRVAdapter;
+import com.example.learning.local.LocationHandler;
 import com.example.learning.modal.WeatherRVModal;
-import com.google.android.material.textfield.TextInputEditText;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import android.Manifest;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 
 public class MainActivity extends AppCompatActivity {
 
     private RelativeLayout homeRL;
+    private LinearLayout llHumidity;
     private ProgressBar loadingPB;
     private TextView cityNameTV,temperatureTV,conditionTV,windTV,humidityTV,rainTV,latitudeTV;
     private RecyclerView weatherRV;
-    private TextInputEditText cityEdt;
+    private EditText cityEdt;
     private ImageView backIV,iconIV,searchIV;
     private ArrayList<WeatherRVModal> weatherRVModalArrayList;
     private WeatherRVAdapter weatherRVAdapter;
@@ -108,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Enter a city name", Toast.LENGTH_SHORT).show();
                     }
                 }
+        });
+
+        llHumidity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HumidityActivity.class);
+                startActivity(intent);
+            }
         });
     }
 
@@ -260,5 +270,6 @@ public class MainActivity extends AppCompatActivity {
         iconIV = findViewById(R.id.idIVIcon);
         searchIV = findViewById(R.id.idIVSearch);
         swipeRefreshLayout = findViewById(R.id.idSRLHome);
+        llHumidity = findViewById(R.id.idLLHumidity);
     }
 }

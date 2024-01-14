@@ -42,18 +42,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/idTVCityName"
+                android:background="@drawable/background2"
                 android:orientation="horizontal"
+                android:layout_margin="10dp"
                 android:weightSum="5">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/idTILCity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="4.5"
                     android:background="@android:color/transparent"
-                    android:hint="Enter City Name"
-                    android:padding="5dp"
+                    android:hint="Enter City Name to Search"
                     android:textColorHint="@color/white"
                     app:hintTextColor="@color/white">
 
@@ -75,8 +76,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
                     android:layout_weight="0.5"
+                    android:layout_marginRight="15dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/baseline_search_24"
                     app:tint="@color/white" />
@@ -199,10 +200,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/idLLHumidity"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp"
                     android:layout_weight="0.333"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="vertical">
 
                     <ImageView
